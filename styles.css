@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #000; /* Background color */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('particle.jpg') repeat top left; /* Particle image */
+    animation: animateBackground 10s linear infinite; /* Animation for background */
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100vw 100vh;
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+.message {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    display: inline-block;
+}
+
+h1, p {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: kineticTypography 0.5s forwards, stomp 0.5s forwards; /* Kinetic typography and stomp animation */
+}
+
+@keyframes kineticTypography {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+button {
+    padding: 15px 30px; /* Larger button size */
+    border-radius: 50px; /* Round button shape */
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Add box-shadow to transition */
+}
+
+button:hover {
+    background-color: #333; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3); /* Glow effect on hover */
+}
